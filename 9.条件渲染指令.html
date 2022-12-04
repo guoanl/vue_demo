@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 在页面中声明一个将要被vue所控制的DOM区域 -->
+    <div id="app">
+        <button @click="fn">Toggle Flag</button>
+        <p v-if="flag">请求成功,被v-if控制</p>
+        <p v-show="flag">请求成功,被v-show控制</p>
+        <hr>
+        <div v-if="type === 'A'">优秀</div>
+        <div v-else-if="type=== 'B'">一般</div>
+        <div v-else-if="type=== 'C'">及格</div>
+        <div v-else>菜逼</div>
+    </div>
+    <!-- 导入vue.js 的 script脚本文件 -->
+    <script src="vue.js"></script>
+    <script>
+        //创建vm实例对象
+        const vm = new Vue({
+            //指定当前VM实例要控制页面哪个区域
+            el:'#app',
+            //指定model数据源
+            data:{
+                flag:true,//if flag==true, show the controlled element
+                type:'A'
+            },
+            methods:{
+                fn(){
+                    if(this.flag){
+                        this.flag=false;
+                    }else{
+                        this.flag=true;
+                    }
+                    console.log(this.flag);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

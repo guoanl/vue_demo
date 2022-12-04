@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 在页面中声明一个将要被vue所控制的DOM区域 -->
+    <div id="app">
+        <p>用户名：{{username}}</p>
+        <p>性别: {{gender}}</p>
+        <div>{{code}}</div>
+        <div v-html = 'code'></div>
+        <!-- 插值里面可以做一些运算 -->
+        <p>{{1 + 1}}</p>
+        {{message.split('').reverse().join('')}}
+        <div v-bind:id="'list-'+id">123</div>
+    </div>
+    <!-- 导入vue.js 的 script脚本文件 -->
+    <script src="vue.js"></script>
+    <script>
+        //创建vm实例对象
+        const vm = new Vue({
+            //指定当前VM实例要控制页面哪个区域
+            el:'#app',
+            //指定model数据源
+            data:{
+                username:'Hello World',
+                gender:'male',
+                code:'<div style="color:blue">Hello</div>',
+                number:2,
+                message:"please love me",
+                id:6              
+            }
+        })
+    </script>
+</body>
+</html>
