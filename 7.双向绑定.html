@@ -18,6 +18,12 @@
             <option value="Sydney">Sydney</option>
             <option value="Melbourne">Melbourne</option>
         </select>
+        <hr>
+        <input type="radio" name="city" value="mel" v-model="province">
+        <input type="radio" name="city" value="shanghai" v-model="province">
+        <hr>
+        <label for="cd1">复选框</label>
+        <input type="checkbox" v-model="flag" id="cd1">
     </div>
     <!-- 导入vue.js 的 script脚本文件 -->
     <script src="vue.js"></script>
@@ -29,7 +35,8 @@
             //指定model数据源
             data:{
             username:'Mike',
-            province:"Hobart"
+            province:"Hobart",
+            flag:true
             },
             methods:{
             }

@@ -15,7 +15,8 @@
     按键修饰符：@keyup.enter:"fn" , @keyup.esc="fn"
 双向绑定指令
     主要和表单结合使用，在不需要操作DOM的情况下获取表单数据
-    v-model
+    v-model可以绑定给复选框，radio和输入框，它在内部封装的时候会在内部判断，如果绑定给复选框, v-model就绑定给checked属性，如果
+    绑定给text，则绑定在value上
     v-model专用修饰符包括 v-model.number(先把表单采集的数据转换成数字再给model)
     v-model.trim-自动过滤掉首位空字符
     v-model.lazy - 不会实时同步，失去焦点再同步
@@ -27,3 +28,5 @@
 列表渲染指令
     v-for = "item in arry"
     v-for 后面一定跟上 :key="items.id", items.id必须是字符串或数字类型,key具有唯一性，不要用index作为key
+
+阻止form的默认行为，给form表单加上@submit.prevent= "fn"
